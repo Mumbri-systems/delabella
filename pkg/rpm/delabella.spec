@@ -3,8 +3,8 @@ Version:  2.0
 Release:  %autorelease
 Summary:  2D Delaunay triangulation (dela) - super stable (bella!)
 License:  MIT
-URL:      https://github.com/msokalski/delabella/tree/V2.0
-Source:   https://github.com/Mumbri-systems/delabella/archive/refs/heads/master.zip
+URL:      https://github.com/msokalski/delabella
+Source:   %{url}/archive/V%{version}/delabella-%{version}.tar.gz
 
 BuildRequires: cmake
 BuildRequires: gcc-c++
@@ -33,8 +33,7 @@ Headers and static library for delabella.
 %files
 %doc README.md
 %license LICENSE
-%{_libdir}/libdelabella.so.%{version}
-%{_libdir}/libdelabella.so.%(echo %{version} | cut -d. -f1)
+%{_libdir}/libdelabella.so.2{,.*}
 
 %files devel
 %{_includedir}/delabella.h
