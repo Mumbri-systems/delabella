@@ -9,7 +9,6 @@ Summary:  2D Delaunay triangulation (dela) - super stable (bella!)
 License:  MIT
 URL:      https://github.com/msokalski/delabella
 Source:   %{url}/archive/%{commit}/stepcode-%{shortcommit}.tar.gz
-#Source:   %{url}/archive/V%{version}/delabella-%{version}.tar.gz
 
 BuildRequires: cmake
 BuildRequires: gcc-c++
