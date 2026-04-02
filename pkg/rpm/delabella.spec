@@ -1,12 +1,15 @@
+%global commit 0b8d371c28c82492d0a945f535bd7d73c467b630
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+%global commitdate 20260402
+
 Name:     delabella
-Version:  2.0
+Version:  2.0^%{commitdate}git%{shortcommit}
 Release:  %autorelease
 Summary:  2D Delaunay triangulation (dela) - super stable (bella!)
 License:  MIT
 URL:      https://github.com/msokalski/delabella
-Source:   %{url}/archive/V%{version}/delabella-%{version}.tar.gz
-Patch1:   gnu-install-dirs.patch
-Patch2:   include-ctime.patch
+Source:   %{url}/archive/%{commit}/stepcode-%{shortcommit}.tar.gz
+#Source:   %{url}/archive/V%{version}/delabella-%{version}.tar.gz
 
 BuildRequires: cmake
 BuildRequires: gcc-c++
@@ -23,7 +26,7 @@ Requires: %{name} = %{version}-%{release}
 Headers and static library for delabella.
 
 %prep
-%autosetup -n delabella-%{version} -p1
+%autosetup -n delabella-%{commit}
 
 %build
 %cmake -DBUILD_SHARED_LIBS=ON
