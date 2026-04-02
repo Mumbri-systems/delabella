@@ -37,8 +37,7 @@ Headers and static library for delabella.
 %files
 %doc README.md
 %license LICENSE
-%{_libdir}/libdelabella.so.%{version}
-%{_libdir}/libdelabella.so.%(echo %{version} | cut -d. -f1)
+%{_libdir}/libdelabella.so.2{,.*}
 
 %files devel
 %{_includedir}/delabella.h
